@@ -47,11 +47,13 @@ Following are important functions of an OS
 | Bottom | Hardware                            |
 
 
-**EXERCISE 1**: What is the market share of linux in the Desktop platform?
-Find it out from @[StatCounter](http://gs.statcounter.com/os-market-share/desktop/worldwide/#monthly-202012-202112-bar)
 
-**EXERCISE 2**: What kind of OS (and web browser) are you using?
+**EXERCISE 1**: What kind of OS (and web browser) are you using?
 Find it from [WhatIsMyBrowser](https://www.whatismybrowser.com)
+
+
+**EXERCISE 2**: What is the market share of linux in the Desktop platform?
+Find it out from @[StatCounter](http://gs.statcounter.com/os-market-share/desktop/worldwide/#monthly-202012-202112-bar)
 
 
 ## Bioinformatics and Linux
@@ -70,6 +72,12 @@ Docker is a tool that allows developers, sys-admins etc. to easily deploy their 
 * Unlike virtual machines, containers do not have the high overhead and hence enable more efficient usage of the underlying system and resources.
 
 
+From Dockerfile to image to container
+
+![Dockerfile](https://kaust-vislab.github.io/introduction-to-docker-for-data-scientists/fig/dockerfile-image-container-relationship.jpg)
+[source: kaust-vislab.github.io](https://kaust-vislab.github.io/introduction-to-docker-for-data-scientists/01-introduction-to-docker/index.html)
+
+
 ## Image vs. Container
 * An **image** is a lightweight, stand-alone, executable package that includes everything needed to run a piece of software, including the code, a runtime, libraries, environment variables, and config files.
 
@@ -79,7 +87,7 @@ Docker is a tool that allows developers, sys-admins etc. to easily deploy their 
 ## Container vs. Virtual Machine (VM)
 ![VMdiagram](https://www.docker.com/sites/default/files/d8/2018-11/container-vm-whatcontainer_2.png)
 [source: docker.com](https://www.docker.com/sites/default/files/d8/2018-11/container-vm-whatcontainer_2.png)
-* * Virtual machines run guest operating systems—note the OS layer in each box.
+* Virtual machines run guest operating systems—note the OS layer in each box.
 * This is resource intensive, and the resulting disk image and application state is an entanglement of OS settings, system-installed dependencies, OS security patches, and other easy-to-lose, hard-to-replicate ephemera.
 
 
@@ -88,18 +96,13 @@ Container diagram
 ![CONTAINERdiagram](https://www.docker.com/sites/default/files/d8/2018-11/docker-containerized-appliction-blue-border_2.png)
 [source: docker.com](https://www.docker.com/sites/default/files/d8/2018-11/docker-containerized-appliction-blue-border_2.png)
 * Containers can share a single kernel, and the only information that needs to be in a container image is the executable and its package dependencies, which never need to be installed on the host system.
-* These processes run like native processes, and you can manage them individually by running commands like docker ps—just like you would run ps on Linux to see active processes.
+* These processes run like native processes, and you can manage them individually by running commands like ``docker ps``—just like you would run ps on Linux to see active processes.
 * Finally, because they contain all their dependencies, there is no configuration entanglement; a containerized app “runs anywhere.”
 
 
-From Dockerfile to image to container
-
-![Dockerfile](https://kaust-vislab.github.io/introduction-to-docker-for-data-scientists/fig/dockerfile-image-container-relationship.jpg)
-[source: kaust-vislab.github.io](https://kaust-vislab.github.io/introduction-to-docker-for-data-scientists/01-introduction-to-docker/index.html)
-
 ## Install Docker
 Docker Community Edition (CE) for your operating system
-https://store.docker.com/search?offering=community&q=&type=edition
+[Download and install Docker](https://store.docker.com/search?offering=community&q=&type=edition)
 
 
 ## Windows users only: enable virtualization in BIOS
@@ -143,7 +146,7 @@ To generate this message, Docker took the following steps:
 
 
 ## iAdmix Test
-Given the called variant file, we want to estimate the ancestry of this individual.
+Given the called variant file (vcf), we want to estimate the ancestry of this individual by the list proportions of multiple reference populations that sums up to 1.
 ```bash
 docker run -ti j5kim/iadmix:latest /bin/bash /testrun/testrun.sh
 ```
