@@ -127,7 +127,7 @@ in the terminal or Power Shell
 2. Open a terminal and type
 3. Open a terminal and type the following command
 ```bash
-# from the host machine
+# from the host computer
 docker run hello-world
 ```
 4. Docker installation is success if you see the outputs like the one below
@@ -161,12 +161,12 @@ Fast individual ancestry inference from DNA sequence data leveraging allele freq
 ## Ubuntu docker
 Start running a ubuntu docker
 ```bash
-# from the host machine
+# from the host computer
 docker run -ti ubuntu
 ```
 
 Exit from the running docker instance
-```sh
+```bash
 # inside the docker instance
 exit
 ```
@@ -184,16 +184,19 @@ docker ps -a
 
 Start the stopped docker
 ```bash
+# from the host computer
 docker start <CONTAINER_NAME>
 ```
 
 List the running docker instances
 ```bash
+# from the host computer
 docker ps
 ```
 
 Attach to the running docker instance
 ```bash
+# from the host computer
 docker exec -it <CONTAINER_NAME> /bin/bash
 ```
 
@@ -201,32 +204,32 @@ docker exec -it <CONTAINER_NAME> /bin/bash
 
 ## Basic linux commands
 1. Update the Ubuntu packages
-```sh
+```bash
 # inside the docker instance
 apt-get update
 ```
 
 2. Display the current directory
-```sh
+```bash
 # inside the docker instance
 pwd
 ```
 
 3. Change to a different directory and check if the current directory has been changed
-```sh
+```bash
 # inside the docker instance
 cd /home
 pwd
 ```
 
 4. Try downloading an external file
-```sh
+```bash
 # inside the docker instance
 wget https://github.com/jihoonkim/dockerhub-iadmix/raw/master/HG001_chr22.vcf.gz
 ```
 
 5. Install missing package **wget** first and try again downloading the file
-```sh
+```bash
 # inside the docker instance
 apt-get install wget
 wget https://github.com/jihoonkim/dockerhub-iadmix/raw/master/HG001_chr22.vcf.gz
@@ -235,13 +238,13 @@ wget https://github.com/jihoonkim/dockerhub-iadmix/raw/master/HG001_chr22.vcf.gz
 Find it out from the docker terminal by running ```ls -hl```
 
 6. Try extracting the compressed file in .gz format while keeping the original file
-```sh
+```bash
 # inside the docker instance
 gunzip -k HG001_chr22.vcf.gz
 ```
 
 7. Install missing package **zip** first and try again extracting the file
-```sh
+```bash
 # inside the docker instance
 apt-get install zip
 gunzip -k HG001_chr22.vcf.gz
@@ -251,7 +254,7 @@ ls -hl
 Find it out from the docker terminal by running ```ls -hl```
 
 8. Print the last ten lines of the .vcf file
-```sh
+```bash
 # inside the docker instance
 tail -n 10 HG001_chr22.vcf
 ```
@@ -261,28 +264,28 @@ Find it out from the docker terminal by running ```wc -l HG001_chr22.vcf```
 Find it out from the docker terminal by running ```tail -n 10 HG001_chr22.vcf | md5sum ```
 
 9. Search the line containing the SNP with RSID rs2401506.
-```sh
+```bash
 # inside the docker instance
 grep rs2401506 HG001_chr22.vcf
 ```
 
 
 10. Create your own directory
-```sh
+```bash
 # inside the docker instance
 mkdir variants
 ls -hl
 ```
 
 11. Copy a file
-```sh
+```bash
 # inside the docker instance
 cp HG001_chr22.vcf testcopy.vcf
 ls -hl
 ```
 
 12. Move a file to another directory
-```sh
+```bash
 # inside the docker instance
 mv testcopy.vcf variants
 ls -hl
@@ -290,7 +293,7 @@ ls -hl variants
 ```
 
 13. Install VIM editor and start using it
-```sh
+```bash
 # inside the docker instance
 apt-get install vim
 vim myfile.txt
@@ -310,42 +313,49 @@ The lifecycle of a file in git.
 
 
 Update apt-get
-```sh
+```bash
+# inside the docker instance
 apt-get update
 ```
 
 Install git
-```sh
+```bash
+# inside the docker instance
 apt-get install git
 ```
 
 retrieve an entire repository from a hosted location via URL
-```sh
+```bash
+# inside the docker instance
 git clone https://github.com/jihoonkim/test.git
 ```
 
 show modified files in working directory, staged for your next commit
-```sh
+```bash
+# inside the docker instance
 git status
 ```
 
 add a file as it looks now to your next commit (stage)
-```sh
+```bash
+# inside the docker instance
 git add test.txt
 ```
 
 commit your staged content as a new commit snapshot
-```sh
+```bash
+# inside the docker instance
 git commit -m "fixed dividing by zero error"
 ```
 
 Transmit local branch commits to the remote repository branch
-```sh
+```bash
+# inside the docker instance
 git push
 ```
 
 Exit docker instance to return to Host computer
-```sh
+```bash
 exit
 ```
 
@@ -356,6 +366,7 @@ exit
 # from the host computer
 docker run -d -p 8888:8080 stevenhart/vcf-miner
 ```
+Hart et al. Brief Bioinform. 2016 [PMID 26210358](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4793895)
 
 2. Open a browser to http://localhost:8888/vcf-miner/
 ```
@@ -363,13 +374,13 @@ Username: Admin
 Password: temppass
 ```
 
-3. Download an example vcf file, [NA12818](https://github.com/raonyguimaraes/mendelmd/raw/master/examples/annotation.final.vcf.zip)
+3. Download an example vcf file, [NA12878](https://github.com/raonyguimaraes/mendelmd/raw/master/examples/annotation.final.vcf.zip)
 from Mayo Clinic, and import it into the VCF-miner
 
 4. Import the downloaded vcf file into vcf-miner
-Hart et al. Brief Bioinform. 2016 [PMID 26210358](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4793895)
 
-5. Analyze and apply filters (dbNSFP_MutationAssessor_pred = H).
+
+5. Analyze and apply filters (dbNSFP_MutationAssessor_pred = H). H stands for High.
 
 
 ## R Docker
