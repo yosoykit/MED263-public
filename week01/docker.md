@@ -1,4 +1,4 @@
-# Tutorial: Docker and linux
+# MED263 Tutorial: Docker, linux, and git
 
 
 ## Table of Contents
@@ -148,6 +148,7 @@ To generate this message, Docker took the following steps:
 ## iAdmix Test
 Given the called variant file (vcf), we want to estimate the ancestry of this individual by the list proportions of multiple reference populations that sums up to 1.
 ```bash
+# from the host machine
 docker run -ti j5kim/iadmix:latest /bin/bash /testrun/testrun.sh
 ```
 
@@ -160,36 +161,73 @@ Fast individual ancestry inference from DNA sequence data leveraging allele freq
 ## Ubuntu docker
 Start running a ubuntu docker
 ```bash
+# from the host machine
 docker run -ti ubuntu
 ```
+
+Exit from the running docker instance
+```sh
+# inside the docker instance
+exit
+```
+
+
 
 **EXERCISE 5**: What is the version of Ubuntu? What is its codename?
 Find it out from the docker terminal by running ```cat /etc/lsb-release```
 
+List all the docker insances
+```bash
+# from the host computer
+docker ps -a
+```
+
+Start the stopped docker
+```bash
+docker start <CONTAINER_NAME>
+```
+
+List the running docker instances
+```bash
+docker ps
+```
+
+Attach to the running docker instance
+```bash
+docker exec -it <CONTAINER_NAME> /bin/bash
+```
+
+
+
 ## Basic linux commands
 1. Update the Ubuntu packages
-```bash
+```sh
+# inside the docker instance
 apt-get update
 ```
 
 2. Display the current directory
-```bash
+```sh
+# inside the docker instance
 pwd
 ```
 
 3. Change to a different directory and check if the current directory has been changed
-```bash
+```sh
+# inside the docker instance
 cd /home
 pwd
 ```
 
 4. Try downloading an external file
-```bash
+```sh
+# inside the docker instance
 wget https://github.com/jihoonkim/dockerhub-iadmix/raw/master/HG001_chr22.vcf.gz
 ```
 
 5. Install missing package **wget** first and try again downloading the file
-```bash
+```sh
+# inside the docker instance
 apt-get install wget
 wget https://github.com/jihoonkim/dockerhub-iadmix/raw/master/HG001_chr22.vcf.gz
 ```
@@ -197,12 +235,14 @@ wget https://github.com/jihoonkim/dockerhub-iadmix/raw/master/HG001_chr22.vcf.gz
 Find it out from the docker terminal by running ```ls -hl```
 
 6. Try extracting the compressed file in .gz format while keeping the original file
-```bash
+```sh
+# inside the docker instance
 gunzip -k HG001_chr22.vcf.gz
 ```
 
 7. Install missing package **zip** first and try again extracting the file
-```bash
+```sh
+# inside the docker instance
 apt-get install zip
 gunzip -k HG001_chr22.vcf.gz
 ls -hl
@@ -211,7 +251,8 @@ ls -hl
 Find it out from the docker terminal by running ```ls -hl```
 
 8. Print the last ten lines of the .vcf file
-```bash
+```sh
+# inside the docker instance
 tail -n 10 HG001_chr22.vcf
 ```
 **EXERCISE 7**: What is the the number of lines in .vcf file HG001_chr22.vcf?
@@ -220,38 +261,45 @@ Find it out from the docker terminal by running ```wc -l HG001_chr22.vcf```
 Find it out from the docker terminal by running ```tail -n 10 HG001_chr22.vcf | md5sum ```
 
 9. Search the line containing the SNP with RSID rs2401506.
-```bash
+```sh
+# inside the docker instance
 grep rs2401506 HG001_chr22.vcf
 ```
-**EXERCISE 9**: What are the reference allels and alternative alleles of SNP rs2401506 in this .vcf file? Find it out from the docker terminal by running ```tail -n 10 HG001_chr22.vcf | md5sum ```
+
 
 10. Create your own directory
-```bash
+```sh
+# inside the docker instance
 mkdir variants
 ls -hl
 ```
 
 11. Copy a file
-```bash
+```sh
+# inside the docker instance
 cp HG001_chr22.vcf testcopy.vcf
 ls -hl
 ```
 
 12. Move a file to another directory
-```bash
+```sh
+# inside the docker instance
 mv testcopy.vcf variants
 ls -hl
 ls -hl variants
 ```
 
 13. Install VIM editor and start using it
-```bash
+```sh
+# inside the docker instance
 apt-get install vim
 vim myfile.txt
 ```
+
+**EXERCISE 9**: What are the reference allels and alternative alleles of SNP rs2401506 in this .vcf file? Find it out from the docker terminal by running ```tail -n 10 HG001_chr22.vcf | md5sum ```
+
+
 **EXERCISE 10**: Read and follow the [Interactive VIM tutorial](http://www.openvim.com/tutorial.html).  We will cover the earlier part during the class, but be sure to finish the rest at home by next class.
-
-
 
 
 ## Git
@@ -260,36 +308,52 @@ The lifecycle of a file in git.
 ![file status](https://uidaholib.github.io/get-git/images/workflow.png)
 [source: uidaholib.github.io](https://uidaholib.github.io/get-git/images/workflow.png)
 
+
+Update apt-get
+```sh
+apt-get update
+```
+
+Install git
+```sh
+apt-get install git
+```
+
 retrieve an entire repository from a hosted location via URL
-```bash
-git clone https://github.com/cguccione/MED263.git
+```sh
+git clone https://github.com/jihoonkim/test.git
 ```
 
 show modified files in working directory, staged for your next commit
-```bash
+```sh
 git status
 ```
 
-
 add a file as it looks now to your next commit (stage)
-```bash
+```sh
 git add test.txt
 ```
 
 commit your staged content as a new commit snapshot
-```bash
-git commit -m "fixed stopping condition"
+```sh
+git commit -m "fixed dividing by zero error"
 ```
 
 Transmit local branch commits to the remote repository branch
-```bash
-git push [alias] [branch]
+```sh
+git push
+```
+
+Exit docker instance to return to Host computer
+```sh
+exit
 ```
 
 
 ## Web application on Docker (use case: VCF-miner)
 1. Start running vcf-miner docker
 ```bash
+# from the host computer
 docker run -d -p 8888:8080 stevenhart/vcf-miner
 ```
 
@@ -299,35 +363,19 @@ Username: Admin
 Password: temppass
 ```
 
-3. Download an example vcf file, [NA12878.trio.vcf.gz](http://bioinformaticstools.centralus.cloudapp.azure.com/research/vcf-miner-sample-vcfs)
+3. Download an example vcf file, [NA12818](https://github.com/raonyguimaraes/mendelmd/raw/master/examples/annotation.final.vcf.zip)
 from Mayo Clinic, and import it into the VCF-miner
 
-4. Import the vcf file NA12878.trio.vcf.gz into vcf-miner
+4. Import the downloaded vcf file into vcf-miner
 Hart et al. Brief Bioinform. 2016 [PMID 26210358](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4793895)
 
-
-**EXERCISE 11**: How many raw variants do you see? Find it out from vcf-miner.
-
-5. Analyze and apply filters (SAVANT_IMPACT == HIGH and ACMG_gene_names) to find
-two genes.
-**EXERCISE 12**: Which two genes survived filtering NA12878.trio.vcf.gz? Find it out from vcf-miner.
-
-
-## Jupyter Docker
-
-```bash
-docker run -p 8888:8888 jupyter/scipy-notebook:33add21fab64
-```
-In a browser, type
-```bash
-http://127.0.0.1:8888/?token=<token>
-```
-where <token> is copied from the screen output of above docker run command.
+5. Analyze and apply filters (dbNSFP_MutationAssessor_pred = H).
 
 
 ## R Docker
 ```bash
-docker run --rm -p 8787:8787 -e PASSWORD=yourpasswordhere rocker/rstudio
+# from the host computer
+docker run --rm -p 8787:8787 -e PASSWORD=rstudio rocker/rstudio
 ```
 In a browser, type
 ```bash
@@ -337,20 +385,25 @@ http://localhost:8787
 ## More docker commands
 Show running containers
 ```bash
+# from the host computer
 docker ps
 ```
 
 Stop running containers
 ```bash
+# from the host computer
 docker stop
 ```
 
 Show all containers
 ```bash
+# from the host computer
 docker ps -a
 ```
+
 Show all docker images
 ```bash
+# from the host computer
 docker images
 ```
 
