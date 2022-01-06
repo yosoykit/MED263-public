@@ -389,12 +389,13 @@ from Mayo Clinic, and import it into the VCF-miner
 ## R Docker
 ```bash
 # from the host computer
-docker run --rm -p 8787:8787 -e PASSWORD=rstudio rocker/rstudio
+docker run --rm -p 8787:8787 -e PASSWORD=rstudio -v /Users/jihoonkim/Projects/test-med263:/export rocker/rstudio
 ```
-In a browser, type
+In a browser, type `rstudio` for both username and password.
 ```bash
 http://localhost:8787
 ```
+Use ``-v <HOST_DIRECTORY>:<DOCKER_DIRECTORY>`` to mount the host computer directory to the (inside) Docker directory.
 
 ## More docker commands
 Show running containers
