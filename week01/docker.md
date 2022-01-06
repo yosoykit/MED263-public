@@ -362,6 +362,8 @@ exit
 
 
 ## Web application on Docker (use case: VCF-miner)
+![VCF-miner](https://www.ncbi.nlm.nih.gov/core/lw/2.0/html/tileshop_pmc/tileshop_pmc_inline.html?title=Click%20on%20image%20to%20zoom&p=PMC3&id=4793895_bbv051f1p.jpg)
+
 1. Start running vcf-miner docker
 ```bash
 # from the host computer
