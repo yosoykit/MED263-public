@@ -250,16 +250,17 @@ apt-get install zip
 gunzip -k HG001_chr22.vcf.gz
 ls -hl
 ```
-**EXERCISE**: What is the compression ratio of gz with the file HG001_chr22.vcf?
-Find it out from the docker terminal by running ```ls -hl```
 
 8. Print the last ten lines of the .vcf file
 ```bash
 # inside the docker instance
 tail -n 10 HG001_chr22.vcf
 ```
+
 **EXERCISE 7**: What is the the number of lines in .vcf file HG001_chr22.vcf?
 Find it out from the docker terminal by running ```wc -l HG001_chr22.vcf```
+
+
 **EXERCISE 8**: What is the the md5 value of the last ten lines of the file HG001_chr22.vcf?
 Find it out from the docker terminal by running ```tail -n 10 HG001_chr22.vcf | md5sum ```
 
