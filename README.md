@@ -64,5 +64,5 @@ This elective course will cover the latest advances in bioinformatics in the con
 ## Final Exam
 * Create a hands-on session document to perform data analysis with your own data (public or private data) similar to MED 263 class
 * Following this document, students (or others) should be able to conduct a data analysis in the context of bioinformatics
-* Turn in the hands-on session document to Dr. Curtius (deadline  TBA)
+* Turn in the hands-on session document (deadline  TBA)
 * Present the hands-on session during the class Tuesday, March 8th 2022, and Thursday March 10th 2022 (TBA-minute presetation each)
