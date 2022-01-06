@@ -114,7 +114,7 @@ When prompted, ensure the Enable Hyper-V Windows Features or the Install require
 **EXERCISE 3**: What is the Docker version installed in your computer?
 Do you have the most recent version? Find it by running 
 ```bash
-# from the host machine
+# from the host computer
 docker --version
 ```
 in the terminal or Power Shell
@@ -356,6 +356,7 @@ git push
 
 Exit docker instance to return to Host computer
 ```bash
+# inside the docker instance
 exit
 ```
 
