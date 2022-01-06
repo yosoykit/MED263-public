@@ -24,7 +24,7 @@ This elective course will cover the latest advances in bioinformatics in the con
 ## Courses
 | Week | Date                          | Topic                                            | Instructor |
 |------|-------------------------------|--------------------------------------------------|------------|
-| 1    | Tuesday  1/4  | Overview & Bootcamp part 1 (docker and linux)    | Dr. Kit Curtius (kcurtius@health.ucsd.edu), Jihoon Kim (j5kim @health.ucsd.edu), and Caitlin Guccione (cguccion@ucsd.edu) |
+| 1    | Tuesday  1/4  | Overview   | Dr. Kit Curtius (kcurtius@health.ucsd.edu), Jihoon Kim (j5kim @health.ucsd.edu), and Caitlin Guccione (cguccion@ucsd.edu) |
 | 1    | Thursday 1/6 | Bootcamp (docker, linux, conda, Jupyter notebook, and R)  | Dr. Kit Curtius (kcurtius@health.ucsd.edu), Jihoon Kim (j5kim @health.ucsd.edu), and Caitlin Guccione (cguccion@ucsd.edu) |
 | 2    | Tuesday  1/11 | Analysis of epigenetic data for precision cancer diagnosis lecture| Dr. Lukas Chavez (luc042@ucsd.edu)|
 | 2    | Thursday 1/13 |Analysis of epigenetic data for precision cancer diagnosis hands-on session | Dr. Lukas Chavez (luc042@ucsd.edu)|
