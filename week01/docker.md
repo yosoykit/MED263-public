@@ -52,15 +52,13 @@ Following are important functions of an OS
 Find it from [WhatIsMyBrowser](https://www.whatismybrowser.com)
 
 
-**EXERCISE 2**: What is the market share of linux in the Desktop platform?
-Find it out from @[StatCounter](http://gs.statcounter.com/os-market-share/desktop/worldwide/#monthly-202012-202112-bar)
-
-
 ## Bioinformatics and Linux
 * Bioinformatics relies heavily on Linux-based computers (hardware) and software.
 * Although many bioinformatics software tools are compiled on Mac OS and Windows,
 it is more conveneint to install and run the software executables on a Linux system.
 
+**EXERCISE 2**: What is the market share of linux in the Desktop platform?
+Find it out from @[StatCounter](http://gs.statcounter.com/os-market-share/desktop/worldwide/#monthly-202012-202112-bar)
 
 
 ## Docker
