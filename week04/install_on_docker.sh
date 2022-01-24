@@ -21,9 +21,11 @@ docker run --name med263_bansal -v $(PWD):/workspace -ti scipy/scipy-dev /bin/ba
 ### RUN INSIDE DOCKER CONTAINER
 ###---------------------------------------------------------------------------
 # switch user from 'gitpod' to 'root'
+#   as 'root' user can install linux packages
+#   and 'gitpod' user will run installed packages and tools
 sudo -i -u root
 
-# check the current user
+# check if the current user is 'gitpod' or 'root'
 whoami
 
 # update linux packages
@@ -35,7 +37,7 @@ apt-get install  -y tabix
 # swith user back to 'gitpod' from 'root'
 exit
 
-# check the current user
+# check if the current user is 'gitpod' or 'root'
 whoami
 
 # change the working directory to /workspace
