@@ -29,7 +29,7 @@ If you had installed 'j5kim/med263-heinz' before and want to start it again, fol
 
 Display a list of stopped containers and identify your own 'CONTAINER ID' of the image 'j5kim/med263-heinz'. 
 ```bash
-docker ps
+docker ps -a
 ```
 
 Start a stopped container using your own 'CONTAINER ID'. 
