@@ -24,6 +24,25 @@ docker run -it -v /Users/johndoe/mylocalfolder:/work j5kim/med263-heinz /bin/bas
 ```
 In this way, you are binding a host directory (outside docker container) to the directoy inside docker container so that all your works (e.g. processed data, output) remain after docker container gets stopped. Otherwise, all your work will be gone and you will have to rerun everything from the beginning.
 
+
+If you had installed 'j5kim/med263-heinz' before and want to start it again, follow the steps below.
+
+Display a list of stopped containers and identify the 'CONTAINER ID' of the image 'j5kim/med263-heinz'/ 
+```bash
+docker ps
+```
+
+Start a stopped container using your own 'CONTAINER ID'.
+```bash
+docker start 64067eb37416
+```
+
+Attach to a running container using your own 'CONTAINER ID'
+```bash
+docker attach 64067eb37416
+```
+
+
 2. `INSIDE DOCKER CONTAINER`, download the mouse (mm9) resource data
 ```bash
 perl /opt/homer/configureHomer.pl -install mm9
