@@ -26,6 +26,7 @@ In this way, you are binding a host directory (outside docker container) to the 
 
 
 If you had installed 'j5kim/med263-heinz' before and want to start it again, follow the steps below.
+![docker command](docker_command.png)
 
 Display a list of stopped containers and identify your own 'CONTAINER ID' of the image 'j5kim/med263-heinz'. 
 ```bash
